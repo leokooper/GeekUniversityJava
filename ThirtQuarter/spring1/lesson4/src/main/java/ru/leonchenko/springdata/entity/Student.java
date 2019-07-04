@@ -2,8 +2,10 @@ package ru.leonchenko.springdata.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
+//@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,7 +15,7 @@ public class Student {
     @Column(name = "name")
     private String name;
 
-    @NotBlank(message = "Поле обязательно для заполнения")
+    @NotNull(message = "Поле обязательно для заполнения")
     @Column(name = "score")
     private int score;
 

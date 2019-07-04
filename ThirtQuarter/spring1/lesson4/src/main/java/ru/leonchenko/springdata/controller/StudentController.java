@@ -31,7 +31,7 @@ public class StudentController {
 
     @GetMapping("signup")
     public String showSignUpForm (Student student) {
-        return "add-student";
+        return "student-add";
     }
 
     @GetMapping("list")
@@ -43,7 +43,7 @@ public class StudentController {
     @PostMapping("add")
     public  String addStudents (@Valid Student student, BindingResult result, Model model){
         if (result.hasErrors()){
-            return "add-student";
+            return "student-add";
         }
         studentRepository.save(student);
         return "redirect:list";
@@ -54,18 +54,18 @@ public class StudentController {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Неверный id студента " + id));
         model.addAttribute("student", student);
-        return "update-student";
+        return "student-update";
     }
 
     @PostMapping("update/{id}")
     public String updateStudent(@PathVariable("id") int id, @Valid Student student, BindingResult result, Model model){
         if(result.hasErrors()){
             student.setId(id);
-            return "update-student";
+            return "student-update";
         }
 
         studentRepository.save(student);
-        model.addAttribute("students", studentRepository.findAll());
+        model.addAttribute("student", studentRepository.findAll());
         return "index";
     }
 
@@ -74,7 +74,7 @@ public class StudentController {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Неверный id студента " + id));
         studentRepository.delete(student);
-        model.addAttribute("students", studentRepository.findAll());
+        model.addAttribute("student", studentRepository.findAll());
         return "index";
     }
 }
