@@ -41,7 +41,7 @@ public class StudentController {
     }
 
     @PostMapping("add")
-    public  String addStudents (@Valid Student student, BindingResult result, Model model){
+    public String addStudents (@Valid Student student, BindingResult result, Model model){
         if (result.hasErrors()){
             return "student-add";
         }
@@ -65,7 +65,7 @@ public class StudentController {
         }
 
         studentRepository.save(student);
-        model.addAttribute("student", studentRepository.findAll());
+        model.addAttribute("students", studentRepository.findAll());
         return "index";
     }
 
@@ -74,7 +74,7 @@ public class StudentController {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Неверный id студента " + id));
         studentRepository.delete(student);
-        model.addAttribute("student", studentRepository.findAll());
+        model.addAttribute("students", studentRepository.findAll());
         return "index";
     }
 }

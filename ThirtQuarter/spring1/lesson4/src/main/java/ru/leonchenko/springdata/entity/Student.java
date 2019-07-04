@@ -15,7 +15,6 @@ public class Student {
     @Column(name = "name")
     private String name;
 
-    @NotNull(message = "Поле обязательно для заполнения")
     @Column(name = "score")
     private int score;
 
@@ -23,9 +22,8 @@ public class Student {
 
     }
 
-    public Student(String name,  int score) {
+    public Student(String name) {
         this.name = name;
-        this.score = score;
     }
 
     public int getId() {
