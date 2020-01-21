@@ -11,7 +11,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring.mvc>5.1.8.RELEASE</spring.mvc>
+        <spring.mvc>5.2.0.RELEASE</spring.mvc>
         <spring.data>2.1.9.RELEASE</spring.data>
         <javax.servlet>4.0.1</javax.servlet>
         <mysql.version>8.0.16</mysql.version>
@@ -69,12 +69,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.1.8.RELEASE</version>
+            <version>5.2.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.1.8.RELEASE</version>
+            <version>5.2.0.RELEASE</version>
         </dependency>
 
     </dependencies>
