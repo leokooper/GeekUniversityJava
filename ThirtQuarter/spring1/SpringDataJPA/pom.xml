@@ -17,7 +17,7 @@
         <mysql.version>8.0.16</mysql.version>
         <hb.manager>5.4.3.Final</hb.manager>
         <spring.test>5.1.8.RELEASE</spring.test>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencies>
